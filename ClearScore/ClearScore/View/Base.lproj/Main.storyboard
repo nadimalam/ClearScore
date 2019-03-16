@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Home View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="HomeViewController" customModule="ClearScore" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3Pt-jR-Vio" customClass="DonutView" customModule="ClearScore" customModuleProvider="target">
+                                <rect key="frame" x="30" y="176" width="315" height="315"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Your credit score is" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="psE-zR-emG">
+                                        <rect key="frame" x="84" y="71" width="147" height="21"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Pu9-uV-vV1">
+                                        <rect key="frame" x="141.5" y="106" width="32.5" height="66"/>
+                                        <fontDescription key="fontDescription" type="system" weight="thin" pointSize="55"/>
+                                        <color key="textColor" red="0.89197725057601929" green="0.82447987794876099" blue="0.47835886478424072" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="out of" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="O81-p7-3k7">
+                                        <rect key="frame" x="135" y="180" width="45" height="21"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Excellent" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oSe-HK-aph">
+                                        <rect key="frame" x="89" y="223" width="137" height="41"/>
+                                        <fontDescription key="fontDescription" type="system" weight="medium" pointSize="34"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="3Pt-jR-Vio" secondAttribute="height" multiplier="1:1" id="58P-k2-RbF"/>
+                                    <constraint firstItem="O81-p7-3k7" firstAttribute="centerX" secondItem="3Pt-jR-Vio" secondAttribute="centerX" id="MCe-iy-LL3"/>
+                                    <constraint firstItem="O81-p7-3k7" firstAttribute="top" secondItem="Pu9-uV-vV1" secondAttribute="bottom" constant="8" id="PBl-Zx-2MG"/>
+                                    <constraint firstItem="psE-zR-emG" firstAttribute="top" secondItem="3Pt-jR-Vio" secondAttribute="top" constant="71" id="aPh-wt-8Ft"/>
+                                    <constraint firstAttribute="bottom" secondItem="oSe-HK-aph" secondAttribute="bottom" constant="51" id="dpP-71-5Rh"/>
+                                    <constraint firstItem="Pu9-uV-vV1" firstAttribute="top" secondItem="psE-zR-emG" secondAttribute="bottom" constant="14" id="i4k-Ld-D65"/>
+                                    <constraint firstItem="psE-zR-emG" firstAttribute="centerX" secondItem="3Pt-jR-Vio" secondAttribute="centerX" id="kWe-RC-Wsj"/>
+                                    <constraint firstItem="Pu9-uV-vV1" firstAttribute="centerX" secondItem="3Pt-jR-Vio" secondAttribute="centerX" id="p7r-RN-JpZ"/>
+                                    <constraint firstItem="oSe-HK-aph" firstAttribute="centerX" secondItem="3Pt-jR-Vio" secondAttribute="centerX" id="shq-V6-1Bp"/>
+                                    <constraint firstItem="oSe-HK-aph" firstAttribute="top" secondItem="O81-p7-3k7" secondAttribute="bottom" constant="22" id="zLc-DS-XZU"/>
+                                </constraints>
+                                <connections>
+                                    <outlet property="maxScoreLabel" destination="O81-p7-3k7" id="fqp-nL-ORz"/>
+                                    <outlet property="scoreBandDescriptionLabel" destination="oSe-HK-aph" id="Aty-XN-lNE"/>
+                                    <outlet property="scoreLabel" destination="Pu9-uV-vV1" id="euW-2e-Xdo"/>
+                                </connections>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="3Pt-jR-Vio" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="C0r-94-H4z"/>
+                            <constraint firstItem="3Pt-jR-Vio" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="uWN-wZ-d97"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                    </view>
+                    <connections>
+                        <outlet property="donutView" destination="3Pt-jR-Vio" id="0lo-dr-1La"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="53.600000000000001" y="27.436281859070466"/>
+        </scene>
+    </scenes>
+</document>
