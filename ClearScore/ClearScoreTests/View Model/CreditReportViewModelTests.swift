@@ -32,17 +32,12 @@ class CreditReportViewModelTests: XCTestCase {
         creditReportService.getCreditReport { creditReport, serviceRequestError in
             XCTAssertNotNil(creditReport, "Credit report should not be nil")
             XCTAssertNil(serviceRequestError, "Error is nil")
-            XCTAssertEqual(viewModel.score, creditReport?.creditReportInfo.score, "Scores should be the same")
-            XCTAssertEqual(viewModel.maxScore, creditReport?.creditReportInfo.maxScoreValue, "Max Score should be the same")
-            XCTAssertEqual(viewModel.scoreBandDescription, creditReport?.creditReportInfo.equifaxScoreBandDescription, "Score Band should be the same")
+            XCTAssertEqual(viewModel.score, creditReport?.creditReportInfo?.score, "Scores should be the same")
+            XCTAssertEqual(viewModel.maxScore, creditReport?.creditReportInfo?.maxScoreValue, "Max Score should be the same")
+            XCTAssertEqual(viewModel.scoreBandDescription, creditReport?.creditReportInfo?.equifaxScoreBandDescription, "Score Band should be the same")            
             
-            let viewModelScorePercent = self.calculatePercentage(currentScore: viewModel.score, maxScore: viewModel.maxScore)
-            let creditReportScorePercent = self.calculatePercentage(currentScore: creditReport?.creditReportInfo.score, maxScore: creditReport?.creditReportInfo.maxScoreValue)
-            XCTAssertEqual(viewModelScorePercent, creditReportScorePercent, "Score Percentages should be the same")
+            let score = Double(creditReport?.creditReportInfo?.score ?? 0) * (100/Double(creditReport?.creditReportInfo?.maxScoreValue ?? 0))
+            XCTAssertEqual(viewModel.percentageScore, score, "Score Percentages should be the same")
         }
-    }
-    
-    private func calculatePercentage(currentScore: Int?, maxScore: Int?) -> Double {
-        return Double(currentScore ?? 0) * (100/Double(maxScore ?? 0))
     }
 }
