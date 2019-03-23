@@ -21,4 +21,8 @@ class Utils {
         
         viewController.present(alertController, animated: true, completion: nil)
     }
+    
+    static func doesAlertViewExist() -> Bool {        
+        return !(UIApplication.shared.keyWindow?.isMember(of: UIWindow.layerClass))!
+    }
 }

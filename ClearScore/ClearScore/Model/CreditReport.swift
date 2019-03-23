@@ -9,9 +9,9 @@
 import Foundation
 
 struct CreditReport: Decodable {
-    let accountIDVStatus: String
-    let creditReportInfo: CreditReportInfo
-    let personaType: String
+    let accountIDVStatus: String?
+    let creditReportInfo: CreditReportInfo?
+    let personaType: String?
 }
 
 extension CreditReport {

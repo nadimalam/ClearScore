@@ -9,10 +9,10 @@
 import Foundation
 
 struct CreditReportInfo: Decodable {
-    let score: Int
-    let maxScoreValue: Int
-    let minScoreValue: Int
-    let equifaxScoreBandDescription: String
+    let score: Int?
+    let maxScoreValue: Int?
+    let minScoreValue: Int?
+    let equifaxScoreBandDescription: String?
 }
 
 extension CreditReportInfo {

@@ -9,42 +9,54 @@
 import Foundation
 
 protocol CreditReportViewModelProtocol {
-    var service: CreditReportServiceProtocol { get }
+    var report: Dynamic<CreditReport?> { get }
     var score: Int { get }
     var maxScore: Int { get }
     var scoreBandDescription: String { get }
-    var report: Dynamic<CreditReport?> { get }
+    var percentageScore: Double { get }
+
+    var service: CreditReportServiceProtocol { get }
     
     func getCreditReport()
 }
 
 struct CreditReportViewModel: CreditReportViewModelProtocol {
-    let service: CreditReportServiceProtocol
+    
     var report: Dynamic<CreditReport?> = Dynamic(nil)
+    let service: CreditReportServiceProtocol
     
     init(service: CreditReportServiceProtocol = CreditReportService.shared) {
         self.service = service
     }
     
     var score: Int {
-        guard let score = report.value?.creditReportInfo.score else {
+        guard let score = report.value?.creditReportInfo?.score else {
             return 0
         }
         return score
     }
     
     var maxScore: Int {
-        guard let maxScoreValue = report.value?.creditReportInfo.maxScoreValue else {
+        guard let maxScoreValue = report.value?.creditReportInfo?.maxScoreValue else {
             return 0
         }
         return maxScoreValue
     }
     
     var scoreBandDescription: String {
-        guard let description = report.value?.creditReportInfo.equifaxScoreBandDescription else {
+        guard let description = report.value?.creditReportInfo?.equifaxScoreBandDescription else {
             return ""
         }
         return description
+    }
+    
+    var percentageScore: Double {
+        guard let score = report.value?.creditReportInfo?.score,
+            let maxScoreValue = report.value?.creditReportInfo?.maxScoreValue else {
+                return 0
+        }
+        let percentage = Double(score) * (100/Double(maxScoreValue))
+        return percentage
     }
     
     func getCreditReport() {

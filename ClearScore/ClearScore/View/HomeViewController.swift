@@ -23,19 +23,13 @@ class HomeViewController: UIViewController {
     }
 
     private func bind() {
-        viewModel.getCreditReport()
         viewModel.report.bind { [unowned self] report in
             guard let _ = report else {
                 return
             }
-            let percentageValue = self.calculatePercentage(currentScore: self.viewModel.score,
-                                                          maxScore: self.viewModel.maxScore)
             self.donutView.updateLabelsWith(self.viewModel)
-            self.donutView.updateProgressBarWith(percent: percentageValue, isAnimated: true)
+            self.donutView.updateProgressBarWith(percent: self.viewModel.percentageScore, isAnimated: true)
         }
-    }
-    
-    private func calculatePercentage(currentScore: Int, maxScore: Int) -> Double {
-        return Double(currentScore) * (100/Double(maxScore))        
+        viewModel.getCreditReport()
     }
 }

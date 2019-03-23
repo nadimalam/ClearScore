@@ -77,6 +77,9 @@ class CreditReportServiceTests: XCTestCase {
         waitForExpectations(timeout: 10) { _ in
             XCTAssertEqual(self.parsingError, ServiceRequestError.invalidURL, "Error is not nil when url is invalid")
             XCTAssertNil(self.creditReport, "Credit report should be nil")
+            
+            Utils.displayAlert(title: ERROR_TITLE, message: ERROR_MSG_URL)            
+            XCTAssertEqual(Utils.doesAlertViewExist(), true)
         }
     }
 }

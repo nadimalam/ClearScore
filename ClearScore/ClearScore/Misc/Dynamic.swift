@@ -8,7 +8,7 @@
 
 import Foundation
 
-class Dynamic<T>: Decodable where T: Decodable {
+class Dynamic<T> {
     typealias Listener = (T) -> ()
     var listener: Listener?
     
@@ -25,9 +25,5 @@ class Dynamic<T>: Decodable where T: Decodable {
     
     init(_ value: T) {
         self.value = value
-    }
-    
-    private enum CodingKeys: CodingKey {
-        case value
     }
 }
