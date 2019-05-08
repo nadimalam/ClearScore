@@ -22,7 +22,7 @@ protocol CreditReportViewModelProtocol {
 
 struct CreditReportViewModel: CreditReportViewModelProtocol {
     
-    var report: Dynamic<CreditReport?> = Dynamic(nil)
+    let report: Dynamic<CreditReport?> = Dynamic(nil)
     let service: CreditReportServiceProtocol
     
     init(service: CreditReportServiceProtocol = CreditReportService.shared) {
